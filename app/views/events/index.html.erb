@@ -1,4 +1,4 @@
-<div id="calendar">
+
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Events</h1>
@@ -14,6 +14,7 @@
     </tr>
   </thead>
 
+<div id="calendar">
   <tbody>
     <% @events.each do |event| %>
       <tr>
@@ -40,10 +41,28 @@
 
     // page is now ready, initialize the calendar...
 
-    $('#calendar').fullCalendar({
+    $('#calendar').fullCalendar(
+    {
+      events: [
+        {
+            title  : 'event1',
+            start  : '2015-08-28'
+        },
+        {
+            title  : 'event2',
+            start  : '2015-08-29',
+            end    : '2010-08-30'
+        },
+        {
+            title  : 'event3',
+            start  : '2015-08-31T12:30:00',
+            allDay : false // will make the time show
+        }
+    ]
         // put your options and callbacks here
     })
-
 });
+
+
 
 </script>
